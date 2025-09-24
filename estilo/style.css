@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #7CE01D;
+    --cor2: #1DE055;
+    --cor3: #2AE01D;
+    --cor4: #CEE01D;
+    --cor5: #1DE097;
+    --cor6: #63E059;
+}
+
+body {
+    display: grid;
+    grid-template: 2fr 1fr 700px 1fr / 1fr 3fr 1fr;
+}
+
+header {
+    text-align: center;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+main {
+    grid-area: 3 / 2 / 4 / 3;
+    display: grid;
+    grid-template: 3fr repeat(5, 1fr) / repeat(4, 1fr);
+    place-items: center center;
+    background-image: linear-gradient(to top, var(--cor1), var(--cor2), var(--cor6));
+    border-radius: 20px;
+}
+
+main > div#visor {
+    grid-area: 1 / 1 / 2 / -1;
+    border-radius: 20px;
+    padding: 10px;
+    width: 90%;
+    height: 100px;
+    background-color: white;
+    overflow: auto;
+}
+
+div#visor > p {
+    margin: 0;
+    margin-top: 30px;
+    text-align: right;
+    font-size: 2em;
+}
+
+main > div.butao {
+    background-color: white;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
