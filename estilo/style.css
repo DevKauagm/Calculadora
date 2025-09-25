@@ -25,6 +25,7 @@ main {
     grid-template: 3fr repeat(5, 1fr) / repeat(4, 1fr);
     place-items: center center;
     background-image: linear-gradient(to top, var(--cor1), var(--cor2), var(--cor6));
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.432);
     border-radius: 20px;
 }
 
@@ -34,6 +35,7 @@ main > div#visor {
     padding: 10px;
     width: 90%;
     height: 100px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.404);
     background-color: white;
     overflow: auto;
 }
@@ -47,6 +49,7 @@ div#visor > p {
 
 main > div.butao {
     background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.404);
     text-align: center;
     width: 50px;
     height: 50px;

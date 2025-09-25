@@ -62,7 +62,7 @@ function resultado() {
         alert('formato inválido!')
     } else {
         valores.push(Number(text.replace(',', '.')))
-        text = calcular(valores)
+        text = String(calcular(valores))
         valores = []
         visor.innerText = text
     }
