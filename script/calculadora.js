@@ -1,7 +1,8 @@
 let text = ''
 let valores = []
 let c = 0
-const visor = document.querySelector('div#visor > p')
+const visor_nums = document.querySelector('div#visor > p')
+const visor_erro = document.querySelector('div#visor > p:nth-child(2)')
 
 function arraystr(array) {
     let str = ''
@@ -15,7 +16,8 @@ function adicionar(valor) {
     c++
     if (valor == '+' || valor == '-' || valor == '×' || valor == '÷') {
         if (c == 1) {
-            alert('[ERRO] digite um número primeiro!')
+            visor_erro.innerHTML = '<strong>Formato usado inválido.</strong>'
+            setTimeout(() => { visor_erro.innerHTML = ''}, 500)
             c = 0
         } else {
             if (text.length == 0){
@@ -32,7 +34,7 @@ function adicionar(valor) {
     } else {
         text += valor
     }
-    visor.innerText = arraystr(valores).replace('.', ',') + text
+    visor_nums.innerText = arraystr(valores).replace('.', ',') + text
 }
 
 function calcular(array) {
@@ -64,6 +66,6 @@ function resultado() {
         valores.push(Number(text.replace(',', '.')))
         text = String(calcular(valores))
         valores = []
-        visor.innerText = text
+        visor_nums.innerText = text
     }
 }

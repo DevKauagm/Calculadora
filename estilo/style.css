@@ -9,14 +9,37 @@
     --cor6: #63E059;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     display: grid;
     grid-template: 2fr 1fr 700px 1fr / 1fr 3fr 1fr;
+    background-image:linear-gradient(150deg, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.603));
+    background-attachment: fixed;
 }
 
 header {
-    text-align: center;
-    grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 1 / 2 / -1;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 20px;
+    background-color: var(--cor5);
+    border: 2px solid var(--cor6);
+}
+
+header > h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.5em;
+    flex: auto;
+    color: rgba(20, 19, 19, 0.904);
+    margin: 10px;
+}
+
+header > div {
+    margin: 10px;
 }
 
 main {
@@ -24,14 +47,16 @@ main {
     display: grid;
     grid-template: 3fr repeat(5, 1fr) / repeat(4, 1fr);
     place-items: center center;
-    background-image: linear-gradient(to top, var(--cor1), var(--cor2), var(--cor6));
+    background-color: rgba(20, 19, 19, 0.904);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.432);
     border-radius: 20px;
+    border: 3px solid var(--cor5);
 }
 
-main > div#visor {
+div#visor {
     grid-area: 1 / 1 / 2 / -1;
     border-radius: 20px;
+    border: 3px solid var(--cor4);
     padding: 10px;
     width: 90%;
     height: 100px;
@@ -41,18 +66,30 @@ main > div#visor {
 }
 
 div#visor > p {
-    margin: 0;
     margin-top: 30px;
     text-align: right;
     font-size: 2em;
 }
 
-main > div.butao {
-    background-color: white;
+div#visor > p > strong {
+    color: red;
+}
+
+.botao {
+    background-color: rgba(235, 225, 225, 0.904);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.404);
     text-align: center;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.botao > p {
+    padding: 13px;
+}
+
+.verde {
+    background-color: var(--cor5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.438);
 }

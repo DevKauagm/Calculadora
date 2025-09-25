@@ -7,29 +7,36 @@
     <link rel="stylesheet" href="estilo/style.css">
 </head>
 <body>
-    <header><h1>Calculadora</h1></header>
+    <header>
+        <h1>Calculadora</h1>
+        <div class="botao"><p>&#x1F506</p></div>
+        <div class="botao"><p>&#x263E</p></div>
+    </header>
     <main>
-        <div id="visor"><p></p></div>
-        <div class="butao" onclick="adicionar('C')"><p>C</p></div>
-        <div class="butao" onclick="adicionar()"><p>()</p></div>
-        <div class="butao" onclick="adicionar()"><p>%</p></div>
-        <div class="butao" onclick="adicionar('÷')"><p>÷</p></div>
-        <div class="butao" onclick="adicionar('7')"><p>7</p></div>
-        <div class="butao" onclick="adicionar('8')"><p>8</p></div>
-        <div class="butao" onclick="adicionar('9')"><p>9</p></div>
-        <div class="butao" onclick="adicionar('×')"><p>x</p></div>
-        <div class="butao" onclick="adicionar('4')"><p>4</p></div>
-        <div class="butao" onclick="adicionar('5')"><p>5</p></div>
-        <div class="butao" onclick="adicionar('6')"><p>6</p></div>
-        <div class="butao" onclick="adicionar('-')"><p>-</p></div>
-        <div class="butao" onclick="adicionar('1')"><p>1</p></div>
-        <div class="butao" onclick="adicionar('2')"><p>2</p></div>
-        <div class="butao" onclick="adicionar('3')"><p>3</p></div>
-        <div class="butao" onclick="adicionar('+')"><p>+</p></div>
-        <div class="butao" onclick="adicionar()"><p>+/-</p></div>
-        <div class="butao" onclick="adicionar('0')"><p>0</p></div>
-        <div class="butao" onclick="adicionar(',')"><p>,</p></div>
-        <div class="butao" onclick="resultado()"><p>=</p></div>
+        <div id="visor">
+            <p></p>
+            <p></p>
+        </div>
+        <div class="botao verde" onclick="adicionar('C')"><p>C</p></div>
+        <div class="botao" onclick="adicionar()"><p>()</p></div>
+        <div class="botao" onclick="adicionar()"><p>%</p></div>
+        <div class="botao verde" onclick="adicionar('÷')"><p>÷</p></div>
+        <div class="botao" onclick="adicionar('7')"><p>7</p></div>
+        <div class="botao" onclick="adicionar('8')"><p>8</p></div>
+        <div class="botao" onclick="adicionar('9')"><p>9</p></div>
+        <div class="botao verde" onclick="adicionar('×')"><p>x</p></div>
+        <div class="botao" onclick="adicionar('4')"><p>4</p></div>
+        <div class="botao" onclick="adicionar('5')"><p>5</p></div>
+        <div class="botao" onclick="adicionar('6')"><p>6</p></div>
+        <div class="botao verde" onclick="adicionar('-')"><p>-</p></div>
+        <div class="botao" onclick="adicionar('1')"><p>1</p></div>
+        <div class="botao" onclick="adicionar('2')"><p>2</p></div>
+        <div class="botao" onclick="adicionar('3')"><p>3</p></div>
+        <div class="botao verde" onclick="adicionar('+')"><p>+</p></div>
+        <div class="botao" onclick="adicionar()"><p>+/-</p></div>
+        <div class="botao" onclick="adicionar('0')"><p>0</p></div>
+        <div class="botao" onclick="adicionar(',')"><p>,</p></div>
+        <div class="botao verde" onclick="resultado()"><p>=</p></div>
     </main>
 </body>
 <script src="script/calculadora.js"></script>
