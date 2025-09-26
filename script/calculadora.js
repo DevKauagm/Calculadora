@@ -1,8 +1,7 @@
 let text = ''
 let valores = []
-let c = 0
-const visor_nums = document.querySelector('div#visor > p')
-const visor_erro = document.querySelector('div#visor > p:nth-child(2)')
+let verifica = true
+const visor = document.querySelector('div#visor > p')
 
 function arraystr(array) {
     let str = ''
@@ -13,28 +12,24 @@ function arraystr(array) {
 }
 
 function adicionar(valor) {
-    c++
-    if (valor == '+' || valor == '-' || valor == '×' || valor == '÷') {
-        if (c == 1) {
-            visor_erro.innerHTML = '<strong>Formato usado inválido.</strong>'
-            setTimeout(() => { visor_erro.innerHTML = ''}, 500)
-            c = 0
-        } else {
-            if (text.length == 0){
-                alert('digite um número primeiro!')
-            } else {
-                valores.push(Number(text.replace(',', '.')))
-                valores.push(valor)
-            }
-            text = ''
-        }
+    if (verifica && isNaN(valor)) {
+        visor.innerHTML = '<strong>Formato usado inválido.</strong>'
+        setTimeout(() => {visor.innerText = arraystr(valores).replace('.', ',') + text}, 2000)
+    } else if (valor == '+' || valor == '-' || valor == '×' || valor == '÷') {
+        valores.push(Number(text.replace(',', '.')))
+        valores.push(valor)
+        text = ''
+        verifica = true
+        visor.innerText = arraystr(valores).replace('.', ',') + text
     } else if (valor == 'C') {
         text = ''
         valores = []
+        visor.innerHTML = ''
     } else {
         text += valor
+        verifica = false
+        visor.innerText = arraystr(valores).replace('.', ',') + text
     }
-    visor_nums.innerText = arraystr(valores).replace('.', ',') + text
 }
 
 function calcular(array) {
@@ -60,12 +55,8 @@ function calcular(array) {
 }
 
 function resultado() {
-    if (text.length == 0) {
-        alert('formato inválido!')
-    } else {
-        valores.push(Number(text.replace(',', '.')))
-        text = String(calcular(valores))
-        valores = []
-        visor_nums.innerText = text
-    }
+    valores.push(Number(text.replace(',', '.')))
+    text = String(calcular(valores))
+    valores = []
+    visor.innerText = text
 }
