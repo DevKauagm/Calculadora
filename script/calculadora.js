@@ -11,24 +11,30 @@ function arraystr(array) {
     return str
 }
 
+const up_visor = () => {visor.innerText = arraystr(valores).replace('.', ',') + text}
+
 function adicionar(valor) {
     if (verifica && isNaN(valor)) {
         visor.innerHTML = '<strong>Formato usado inválido.</strong>'
-        setTimeout(() => {visor.innerText = arraystr(valores).replace('.', ',') + text}, 2000)
+        setTimeout(up_visor, 1500)
     } else if (valor == '+' || valor == '-' || valor == '×' || valor == '÷') {
         valores.push(Number(text.replace(',', '.')))
         valores.push(valor)
         text = ''
         verifica = true
-        visor.innerText = arraystr(valores).replace('.', ',') + text
+        up_visor()
+    } else if (valor == ',' && text.indexOf(',') == -1) {
+        text += valor
+        verifica = true
+        up_visor()
     } else if (valor == 'C') {
         text = ''
         valores = []
-        visor.innerHTML = ''
-    } else {
+        up_visor()
+    } else if (!isNaN(valor)) {
         text += valor
         verifica = false
-        visor.innerText = arraystr(valores).replace('.', ',') + text
+        up_visor()
     }
 }
 
@@ -56,7 +62,7 @@ function calcular(array) {
 
 function resultado() {
     valores.push(Number(text.replace(',', '.')))
-    text = String(calcular(valores))
+    text = String(calcular(valores)).replace('.', ',')
     valores = []
-    visor.innerText = text
+    up_visor()
 }
