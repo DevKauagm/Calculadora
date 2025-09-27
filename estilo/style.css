@@ -17,7 +17,7 @@
 body {
     display: grid;
     grid-template: 2fr 1fr 700px 1fr / 1fr 3fr 1fr;
-    background-image:linear-gradient(150deg, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.603));
+    background-image: linear-gradient(150deg, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.603));
     background-attachment: fixed;
 }
 
@@ -28,6 +28,7 @@ header {
     padding: 20px;
     background-color: var(--cor5);
     border: 2px solid var(--cor6);
+    transition: background-color .5s ease-in-out;
 }
 
 header > h1 {
@@ -42,12 +43,12 @@ header > div {
     margin: 10px;
 }
 
-main {
+main#calculadora {
     grid-area: 3 / 2 / 4 / 3;
     display: grid;
     grid-template: 3fr repeat(5, 1fr) / repeat(4, 1fr);
     place-items: center center;
-    background-color: rgba(20, 19, 19, 0.904);
+    background: rgba(20, 19, 19, 0.904);
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.432);
     border-radius: 20px;
     border: 3px solid var(--cor5);

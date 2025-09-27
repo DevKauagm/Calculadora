@@ -9,10 +9,10 @@
 <body>
     <header>
         <h1>Calculadora</h1>
-        <div class="botao"><p>&#x1F506</p></div>
-        <div class="botao"><p>&#x263E</p></div>
+        <div class="botao" onclick="tema('claro')"><p>&#x1F506</p></div>
+        <div class="botao" onclick="tema('escuro')"><p>&#x263E</p></div>
     </header>
-    <main>
+    <main id="calculadora">
         <div id="visor"><p></p></div>
         <div class="botao verde" onclick="adicionar('C')"><p>C</p></div>
         <div class="botao" onclick="adicionar()"><p>()</p></div>
@@ -35,6 +35,7 @@
         <div class="botao" onclick="adicionar(',')"><p>,</p></div>
         <div class="botao verde" onclick="resultado()"><p>=</p></div>
     </main>
+    <script src="script/calculadora.js"></script>
+    <script src="script/tema.js"></script>
 </body>
-<script src="script/calculadora.js"></script>
 </html>

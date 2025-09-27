@@ -42,18 +42,23 @@ function calcular(array) {
     while (array.length > 1) {
         for (let i in array) {
             i = Number(i)
-            if (array[i] == '+') {
-                const soma = array[i-1] + array[i+1]
-                array.splice(i-1, 3, soma)
-            } else if (array[i] == '-') {
-                const sub = array[i-1] - array[i+1]
-                array.splice(i-1, 3, sub)
-            } else if (array[i] == '×') {
-                const multi = array[i-1] * array[i+1]
-                array.splice(i-1, 3, multi)
-            } else if (array[i] == '÷') {
-                const div = array[i-1] / array[i+1]
-                array.splice(i-1, 3, div)
+            switch(array[i]) {
+                case '+':
+                    const soma = array[i-1] + array[i+1]
+                    array.splice(i-1, 3, soma)
+                    break
+                case '-':
+                    const sub = array[i-1] - array[i+1]
+                    array.splice(i-1, 3, sub)
+                    break
+                case '×':
+                    const multi = array[i-1] * array[i+1]
+                    array.splice(i-1, 3, multi)
+                    break
+                case '÷':
+                    const div = array[i-1] / array[i+1]
+                    array.splice(i-1, 3, div)
+                    break
             }
         }
     }
