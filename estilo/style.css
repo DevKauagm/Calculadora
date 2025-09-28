@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 :root {
-    --cor1: #7CE01D;
-    --cor2: #1DE055;
+    --cor1: #59025c;
+    --cor2: #d80769;
     --cor3: #2AE01D;
     --cor4: #CEE01D;
     --cor5: #1DE097;
@@ -17,7 +17,7 @@
 body {
     display: grid;
     grid-template: 2fr 1fr 700px 1fr / 1fr 3fr 1fr;
-    background-image: linear-gradient(150deg, black, rgba(0, 0, 0, 0.801), rgba(0, 0, 0, 0.603));
+    background-image: linear-gradient(150deg, black, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6));
     background-attachment: fixed;
 }
 
@@ -48,10 +48,11 @@ main#calculadora {
     display: grid;
     grid-template: 3fr repeat(5, 1fr) / repeat(4, 1fr);
     place-items: center center;
-    background: rgba(20, 19, 19, 0.904);
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.432);
+    background: rgba(20, 19, 19, 0.9);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     border: 3px solid var(--cor5);
+    transition: background-color 1s;
 }
 
 div#visor {
@@ -77,8 +78,8 @@ div#visor > p > strong {
 }
 
 .botao {
-    background-color: rgba(235, 225, 225, 0.904);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.404);
+    background-color: rgba(235, 225, 225, 0.9);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     text-align: center;
     width: 50px;
     height: 50px;
@@ -88,9 +89,10 @@ div#visor > p > strong {
 
 .botao > p {
     padding: 13px;
+    transition: color 2s;
 }
 
 .verde {
     background-color: var(--cor5);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.438);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
