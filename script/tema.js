@@ -1,6 +1,7 @@
 const header = document.querySelector('header')
 const calculadora = document.getElementById('calculadora')
 const botao = document.querySelectorAll('main > .botao > p')
+window.tema = tema
 
 function tema(tema) {
     switch(tema) {

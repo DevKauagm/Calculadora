@@ -1,17 +1,14 @@
+import { arraystr } from "./ult.js"
+
+window.adicionar = adicionar
+window.resultado = resultado
+
 let text = ''
 let valores = []
 let verifica = true
 const visor = document.querySelector('div#visor > p')
 
-function arraystr(array) {
-    let str = ''
-    for (let i in array) {
-        str += `${array[i]} `
-    }
-    return str
-}
-
-const up_visor = () => {visor.innerText = arraystr(valores).replace('.', ',') + text}
+const up_visor = () => { visor.innerText = arraystr(valores).replace('.', ',') + text }
 
 function adicionar(valor) {
     if (verifica && isNaN(valor)) {
